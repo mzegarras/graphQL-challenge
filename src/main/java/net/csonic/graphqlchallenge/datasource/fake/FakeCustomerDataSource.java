@@ -46,7 +46,7 @@ public class FakeCustomerDataSource {
                     .birthDate(faker.date().birthday().toInstant().atOffset(ZoneOffset.ofHours(-5)))
                     .document(DocumentType.newBuilder()
                             .type(TypesDocument.values()[ThreadLocalRandom.current().nextInt(TypesDocument.values().length)])
-                            .number(faker.numerify("1234567890"))
+                            .number(faker.numerify("########"))
                             .build())
                     .email(faker.address().mailBox())
                     .phones(phones)
