@@ -1,0 +1,32 @@
+type Customer {
+    id: ID!,
+    firstName: String!,
+    lastName: String!
+    gender: TypesGender!,
+    address: String!
+    birthDate: DateTime!
+    document: DocumentType!
+    email: String!
+    phones:[Phone!]
+    relations:[Customer]
+}
+
+enum TypesDocument {
+    DNI
+    PASSPORT
+}
+
+enum TypesGender {
+    Female
+    Male
+}
+
+type DocumentType {
+    type: TypesDocument!,
+    number: String!
+}
+
+type Phone{
+    id: ID,
+    phone: String!
+}
