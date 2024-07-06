@@ -41,9 +41,9 @@ public class FakeCustomerDataSource {
             for (int j = 0; j < ThreadLocalRandom.current().nextInt(1, 3); j++) {
                 var account = Account.newBuilder()
                         .id(faker.idNumber().ssnValid())
-                        .number(faker.finance().iban("ME"))
-                        .currency(faker)
-                        .balance(100d)
+                        .number(faker.finance().iban("ME").replace("ME",""))
+                        .currency("PEN")
+                        .balance(faker.random().nextDouble(100,10000))
                         .build();
 
                 accounts.add(account);
