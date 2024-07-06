@@ -9,6 +9,7 @@ type Customer {
     email: String!
     phones:[Phone!]
     relations:[Customer]
+    accounts:[Account!]!
 }
 
 enum TypesDocument {

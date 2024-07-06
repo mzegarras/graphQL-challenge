@@ -36,6 +36,19 @@ public class FakeCustomerDataSource {
                 phones.add(address);
             }
 
+            var accounts = new ArrayList<Account>();
+
+            for (int j = 0; j < ThreadLocalRandom.current().nextInt(1, 3); j++) {
+                var account = Account.newBuilder()
+                        .id(faker.idNumber().ssnValid())
+                        .number(faker.finance().iban("ME"))
+                        .currency(faker)
+                        .balance(100d)
+                        .build();
+
+                accounts.add(account);
+            }
+
 
             var customer = Customer.newBuilder()
                     .id(faker.idNumber().ssnValid())
@@ -50,6 +63,7 @@ public class FakeCustomerDataSource {
                             .build())
                     .email(faker.address().mailBox())
                     .phones(phones)
+                    .accounts(accounts)
                     .build();
 
 

@@ -1,0 +1,15 @@
+
+
+"Cuenta de cliente"
+type Account{
+    "Id del cuenta"
+    id: ID,
+    "Número del cuenta"
+    number: String!,
+    "Saldo del cuenta"
+    balance: Float!,
+    "Currency del cuenta"
+    currency: String!
+    #"Movimientos de la cuenta"
+    #transactions:[Transaction!]
+}
