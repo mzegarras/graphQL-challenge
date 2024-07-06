@@ -1,5 +1,5 @@
 # GraphQL Challenge
-* http://localhost:16686/search
+
 
 ## Start service
 ```
@@ -7,8 +7,8 @@
 ```
 
 ## Endpoints
-* /graphql
-* /schema
+* http://localhost:8080/graphql
+* http://localhost:8080/schema
 
 ## Queries
 ```
