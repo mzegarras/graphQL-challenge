@@ -57,7 +57,7 @@ public class FakeCustomerDataSource {
                         .id(faker.idNumber().ssnValid())
                         .number(faker.finance().iban("ME").replace("ME",""))
                         .currency("PEN")
-                        .balance(faker.random().nextDouble(100,10000))
+                        .balance(faker.random().nextDouble(-10000,10000))
                         .transactions(transactions)
                         .build();
                 accounts.add(account);

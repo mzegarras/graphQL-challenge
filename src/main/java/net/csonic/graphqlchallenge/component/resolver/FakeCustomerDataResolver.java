@@ -4,6 +4,7 @@ import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsData;
 import com.netflix.graphql.dgs.InputArgument;
 import net.csonic.graphqlchallenge.codegen.DgsConstants;
+import net.csonic.graphqlchallenge.codegen.types.Account;
 import net.csonic.graphqlchallenge.codegen.types.Customer;
 import net.csonic.graphqlchallenge.datasource.fake.FakeBookDataSource;
 import net.csonic.graphqlchallenge.datasource.fake.FakeCustomerDataSource;
@@ -43,5 +44,22 @@ public class FakeCustomerDataResolver {
                 .filter(b -> StringUtils.containsIgnoreCase(
                         b.getDocument().getNumber(), dniNumber.get()
                 )).collect(Collectors.toList());
+    }
+
+    @DgsData(parentType = DgsConstants.QUERY_TYPE, field = DgsConstants.QUERY.AccountsById)
+    public List<Account> getAccountsById(@InputArgument(name = DgsConstants.QUERY.ACCOUNTSBYID_INPUT_ARGUMENT.CustomerId)
+                                                 Optional<String> customerId) {
+
+
+        if (customerId.isEmpty() || StringUtils.isBlank(customerId.get())) {
+            return null;
+        }
+
+        return FakeCustomerDataSource.CUSTOMER_LIST.stream()
+                .filter(b -> StringUtils.containsIgnoreCase(b.getId(), customerId.get()
+                ))
+                .flatMap(p->p.getAccounts().stream())
+                .collect(Collectors.toList());
+
     }
 }

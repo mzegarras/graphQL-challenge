@@ -10,7 +10,7 @@ type Account{
     balance: Float!,
     "Currency del cuenta"
     currency: String!
-    #"Movimientos de la cuenta"
+    "Movimientos de la cuenta"
     transactions:[Transaction!]
 }
 
