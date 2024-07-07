@@ -4,9 +4,8 @@ scalar NonNegativeInt
 scalar DateTime
 
 type Query{
-    allHellos:[Hello]
-    oneHello: Hello
     books(author: String): [Book]
     booksByReleased(releasedInput: ReleaseHistoryInput!): [Book]
-    allCustomers:[Customer!]
+    customersByName(lastName:String):[Customer!]
+    customersByDocument(dniNumber:String):[Customer!]
 }

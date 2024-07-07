@@ -10,7 +10,7 @@ import net.csonic.graphqlchallenge.codegen.types.Hello;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-@DgsComponent
+//@DgsComponent
 public class HelloDataResolver {
 
     //@DgsData(parentType = DgsConstants.QUERY_TYPE, field = DgsConstants.QUERY.AllHellos)

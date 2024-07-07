@@ -11,5 +11,15 @@ type Account{
     "Currency del cuenta"
     currency: String!
     #"Movimientos de la cuenta"
-    #transactions:[Transaction!]
+    transactions:[Transaction!]
+}
+
+"Movimientos de una cuenta"
+type Transaction{
+    "Id del movimiento"
+    id: ID,
+    "Fecha y hora de transacción"
+    fecha: DateTime!,
+    "Monto del movimiento"
+    amount: Float!,
 }
