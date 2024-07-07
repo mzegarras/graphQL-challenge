@@ -6,7 +6,6 @@ import com.netflix.graphql.dgs.InputArgument;
 import net.csonic.graphqlchallenge.codegen.DgsConstants;
 import net.csonic.graphqlchallenge.codegen.types.Account;
 import net.csonic.graphqlchallenge.codegen.types.Customer;
-import net.csonic.graphqlchallenge.datasource.fake.FakeBookDataSource;
 import net.csonic.graphqlchallenge.datasource.fake.FakeCustomerDataSource;
 import org.apache.commons.lang3.StringUtils;
 
