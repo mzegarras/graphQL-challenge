@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   graphql-challenge:
-    image: mzegarra/graphql-challenge-ta:1.0.0
+    image: mzegarra/graphql-challenge-ta:1.0.1
     platform: linux/amd64
     build:
       context: .
